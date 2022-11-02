@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReleaseLearning">
         <activity
+            android:name="com.example.releaselearning.chat.Chat"
+            android:exported="false" />
+        <activity
+            android:name="com.example.releaselearning.exam.Exam"
+            android:exported="false" />
+        <activity
+            android:name="com.example.releaselearning.homeWork.HomeWork"
+            android:exported="false" />
+        <activity
+            android:name=".StudentHomepage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
