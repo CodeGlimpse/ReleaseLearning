@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/amazing/Android/ReleaseLearning/app/src/main/res/layout/activity_home_work.xml" value="0.12604166666666666" />
+        <entry key="..\:/amazing/Android/ReleaseLearning/app/src/main/res/layout/activity_login_in.xml" value="0.1082427536231884" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.6249404907226562" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.38005218505859373" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1621376811594203" />

@@ -35,7 +35,7 @@ public class Register extends AppCompatActivity {
                     Intent intent = new Intent(Register.this , login_in.class) ;
                     startActivityForResult(intent , 1);
                     break;
-                case Constant.UNSUCCEED_CODE:
+                case Constant.FAILED_CODE:
                     id.setText("");
                     password.setText("");
                     password2.setText("");
@@ -64,6 +64,7 @@ public class Register extends AppCompatActivity {
         class_id = findViewById(R.id.student_register_class);
         register = findViewById(R.id.register);
     }
+
     private void setClickListenerOnView() {
         register.setOnClickListener(view -> {
             String idStr = String.valueOf(id.getText());
@@ -81,12 +82,7 @@ public class Register extends AppCompatActivity {
                 Toast.makeText(Register.this,"两次密码不一致",Toast.LENGTH_LONG).show();
             }
             else{
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        add(idStr ,passwordStr ,nameStr ,classStr);
-                    }
-                }).start();
+                new Thread(() -> add(idStr ,passwordStr ,nameStr ,classStr)).start();
 
             }
 
@@ -94,7 +90,7 @@ public class Register extends AppCompatActivity {
     }
 
     private void add(String idStr, String passwordStr, String nameStr, String classStr) {
-        String URL = Constant.URLAdd+"/"+ idStr+ "/"+passwordStr+"/"+nameStr +"/"+classStr;
+        String URL = Constant.URLAddUser+"/"+ idStr+ "/"+passwordStr+"/"+nameStr +"/"+classStr;
         System.out.println(URL);
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
@@ -114,15 +110,13 @@ public class Register extends AppCompatActivity {
                 //处理数据
                 String responseStr = response.body().string();
                 System.out.println(responseStr);
-                if(responseStr.equals("1")){
-                    Message message = new Message();
+                Message message = new Message();
+                if(responseStr.equals("true")){
                     message.what = Constant.SUCCEED_CODE;
-                    myHandler.sendMessage(message);
                 }else{
-                    Message message = new Message();
-                    message.what = Constant.UNSUCCEED_CODE;
-                    myHandler.sendMessage(message);
+                    message.what = Constant.FAILED_CODE;
                 }
+                myHandler.sendMessage(message);
             }
         });
     }

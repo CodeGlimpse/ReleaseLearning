@@ -25,25 +25,22 @@ public class StudentHomepage extends AppCompatActivity {
         setListener();
     }
     private void setListener() {
-        View.OnClickListener MyListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(MainActivity.this,"you have clicked Button2",Toast.LENGTH_SHORT).show();
+        View.OnClickListener MyListener = v -> {
+            //Toast.makeText(MainActivity.this,"you have clicked Button2",Toast.LENGTH_SHORT).show();
 
-                switch (v.getId()){
-                    case R.id.btn_homeWork:
-                        Intent intent1 = new Intent(StudentHomepage.this, HomeWork.class);
-                        startActivity(intent1);
-                        break;
-                    case R.id.btn_exam:
-                        Intent intent2 = new Intent(StudentHomepage.this, Exam.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.btn_chat:
-                        Intent intent3 = new Intent(StudentHomepage.this, Chat.class);
-                        startActivity(intent3);
-                        break;
-                }
+            switch (v.getId()){
+                case R.id.btn_homeWork:
+                    Intent intent1 = new Intent(StudentHomepage.this, HomeWork.class);
+                    startActivity(intent1);
+                    break;
+                case R.id.btn_exam:
+                    Intent intent2 = new Intent(StudentHomepage.this, Exam.class);
+                    startActivity(intent2);
+                    break;
+                case R.id.btn_chat:
+                    Intent intent3 = new Intent(StudentHomepage.this, Chat.class);
+                    startActivity(intent3);
+                    break;
             }
         };
 

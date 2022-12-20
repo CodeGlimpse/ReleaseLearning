@@ -2,8 +2,9 @@ package com.example.releaselearning;
 
 public class Constant {
 
-    public static final String URLQueryIdAndPassword = "http://10.7.86.170:8080/androidStudent/login_stu";
-    public static final String URLAdd = "http://10.7.86.170:8080/androidStudent/register_stu";
+    public static final String URL = "http://192.168.0.105:8080/android";
+    public static final String URLLogin = URL + "/login";
+    public static final String URLAddUser = URL + "/register";
     public static final int SUCCEED_CODE = 1;
-    public static final int UNSUCCEED_CODE = 2;
+    public static final int FAILED_CODE = 2;
 }
