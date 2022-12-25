@@ -36,6 +36,7 @@ public class login_in extends AppCompatActivity {
                     Intent intent = new Intent(login_in.this, StudentHomepage.class);
 
                     intent.putExtra("id", idStr);
+                    Constant.StuId = idStr;
                     startActivityForResult(intent, 1);
                     break;
                 case Constant.FAILED_CODE:

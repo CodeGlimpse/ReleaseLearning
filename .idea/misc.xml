@@ -3,17 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/code/AndroidProjec/groupWork/realseLearning/app/src/main/res/layout/activity_exam.xml" value="0.1" />
+        <entry key="..\:/code/AndroidProjec/groupWork/realseLearning/app/src/main/res/layout/activity_home_work.xml" value="0.1" />
+        <entry key="..\:/code/AndroidProjec/groupWork/realseLearning/app/src/main/res/layout/activity_student_homepage.xml" value="0.10280797101449275" />
+        <entry key="..\:/code/AndroidProjec/groupWork/realseLearning/app/src/main/res/layout/activity_submit_homework.xml" value="0.11875" />
+        <entry key="..\:/code/AndroidProjec/groupWork/realseLearning/app/src/main/res/layout/fragment_exam.xml" value="0.12635869565217392" />
+        <entry key="..\:/code/AndroidProjec/groupWork/realseLearning/app/src/main/res/layout/fragment_exam_item.xml" value="0.12635869565217392" />
+        <entry key="..\:/code/AndroidProjec/groupWork/realseLearning/app/src/main/res/layout/fragment_home_work_item.xml" value="0.2" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.6249404907226562" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.38005218505859373" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1621376811594203" />
-        <entry key="app/src/main/res/layout/activity_exam.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_home_work.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.34074249267578127" />
         <entry key="app/src/main/res/layout/activity_login_in.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17135416666666667" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_student_homepage.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_submit_homework.xml" value="0.14115854899088542" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.19684006711269947" />
       </map>
     </option>
   </component>
