@@ -3,15 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/amazing/Android/ReleaseLearning/app/src/main/res/layout/activity_home_work.xml" value="0.12604166666666666" />
-        <entry key="..\:/amazing/Android/ReleaseLearning/app/src/main/res/layout/activity_login_in.xml" value="0.1082427536231884" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.6249404907226562" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.38005218505859373" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1621376811594203" />
+        <entry key="app/src/main/res/layout/activity_exam.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home_work.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.34074249267578127" />
         <entry key="app/src/main/res/layout/activity_login_in.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17135416666666667" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.19684006711269947" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_student_homepage.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_submit_homework.xml" value="0.14115854899088542" />
       </map>
     </option>
   </component>

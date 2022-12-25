@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homeWork.SubmitHomework"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/homework_submit_title"
+        android:background="#3EA4F4"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:padding="5dp"
+        android:text="作业"
+        android:textSize="35dp" />
+    <EditText
+        android:id="@+id/homework_submit_detail"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:text="作业详情"/>
+    <Button
+        android:layout_marginLeft="100dp"
+        android:id="@+id/homweork_submit_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="提交"/>
+
+</LinearLayout>

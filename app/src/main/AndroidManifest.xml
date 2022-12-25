@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.releaselearning">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReleaseLearning"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name="com.example.releaselearning.chat.Chat"
             android:exported="false" />
@@ -20,7 +24,10 @@
             android:name="com.example.releaselearning.exam.Exam"
             android:exported="false" />
         <activity
-            android:name="com.example.releaselearning.homeWork.HomeWork"
+            android:name=".homeWork.HomeWork"
+            android:exported="false" />
+        <activity
+            android:name=".homeWork.SubmitHomework"
             android:exported="false" />
         <activity
             android:name=".StudentHomepage"
@@ -31,7 +38,6 @@
         <activity
             android:name=".login_in"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
