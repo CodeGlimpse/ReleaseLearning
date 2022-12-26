@@ -26,6 +26,8 @@ import com.example.releaselearning.Entity.Teacher;
 import com.example.releaselearning.R;
 import com.example.releaselearning.exam.Exam;
 import com.example.releaselearning.homeWork.fragment.HomeWorkAdapter;
+import com.example.releaselearning.login_in;
+import com.example.releaselearning.studentHomepage.StudentHomepage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -69,12 +71,19 @@ public class NoLook extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView tv = view.findViewById(R.id.tv_homeworkId);
                 String homeworkId = tv.getText().toString();
-                Intent intent = getActivity().getIntent();
+//                Intent intent = getActivity().getIntent();
+                Intent intent = new Intent(getContext(), SubmitHomework.class);
                 intent.putExtra("homeworkId",homeworkId);
+                intent.putExtra("studentId" , stuId);
 
                 //跳转到作业详情页面
-                intent.setClass(getActivity(), Exam.class);
-                startActivity(intent);
+//                intent.setClass(getActivity(), Exam.class);
+                startActivityForResult(intent, 1);
+//                Intent intent = new Intent(login_in.this, StudentHomepage.class);
+//
+//                intent.putExtra("id", idStr);
+//                Constant.StuId = idStr;
+//                startActivityForResult(intent, 1);
             }
         });
 

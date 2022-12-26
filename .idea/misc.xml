@@ -13,10 +13,28 @@
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.6249404907226562" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.38005218505859373" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1621376811594203" />
+        <entry key="app/src/main/res/layout/activity_exam.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_exam_end.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_exam_end_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_exam_no_begin.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_exam_no_begin_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_exam_ongoing.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_exam_ongoing_detail.xml" value="0.1185302734375" />
+        <entry key="app/src/main/res/layout/activity_home_work.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/activity_homework_look_detail.xml" value="0.3563218390804598" />
+        <entry key="app/src/main/res/layout/activity_homework_look_detail2.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/activity_homework_no_look.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/activity_homework_submit.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout/activity_homework_yes_look.xml" value="0.17135416666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.34074249267578127" />
-        <entry key="app/src/main/res/layout/activity_login_in.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login_in.xml" value="0.4181365966796875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17135416666666667" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.19684006711269947" />
+        <entry key="app/src/main/res/layout/activity_student_homepage.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_exam.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_exam_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home_work.xml" value="0.1622207641601564" />
+        <entry key="app/src/main/res/layout/fragment_home_work_item.xml" value="0.17135416666666667" />
       </map>
     </option>
   </component>

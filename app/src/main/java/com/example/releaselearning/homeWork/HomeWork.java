@@ -21,8 +21,8 @@ public class HomeWork extends Fragment{
     private FragmentTransaction transaction;
     private NoLook noLookFragment;
 
-    //private YesLook yesLookFragment;
-    private HomeWork yesLookFragment;
+    private YesLook yesLookFragment;
+//    private HomeWork yesLookFragment;
     private RadioGroup rg;
     private RadioButton rb_no;
     private RadioButton rb_yes;
@@ -76,7 +76,7 @@ public class HomeWork extends Fragment{
                         v_white.setBackground(getResources().getDrawable(R.color.blue));
                         transaction = getChildFragmentManager().beginTransaction();
                         if (yesLookFragment == null) {
-                            yesLookFragment = new HomeWork();
+                            yesLookFragment = new YesLook();
                         }
                         transaction.replace(R.id.homework_vp, yesLookFragment);
                         transaction.commit();

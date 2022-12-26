@@ -64,9 +64,10 @@ public class YesLook extends Fragment {
                 String homeworkId = tv.getText().toString();
                 Intent intent = getActivity().getIntent();
                 intent.putExtra("homeworkId",homeworkId);
+                intent.putExtra("studentId",stuId);
 
                 //跳转到作业详情页面
-                intent.setClass(getActivity(), Exam.class);
+                intent.setClass(getActivity(), HomeworkLookDetail.class);
                 startActivity(intent);
             }
         });

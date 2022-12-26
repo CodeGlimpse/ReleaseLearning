@@ -1,5 +1,7 @@
 package com.example.releaselearning.homeWork;
 
+import static java.lang.Thread.sleep;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.releaselearning.Constant;
+import com.example.releaselearning.Entity.Homework;
 import com.example.releaselearning.Entity.HwDetail;
 import com.example.releaselearning.R;
 import com.loopj.android.http.AsyncHttpClient;
@@ -44,30 +47,33 @@ public class SubmitHomework extends AppCompatActivity {
         submit.setOnClickListener(view -> {
             String str = etDetail.getText().toString();
             System.out.println(str);
+            if(!str.isEmpty()){
+                hwDetail.setHomeworkFile(createFile(str));
+                System.out.println(hwDetail.toString());
+                try {
+                    AsyncHttpClient client = new AsyncHttpClient();
+                    RequestParams params = new RequestParams();
+                    params.put("homeworkId", "第一个作业");
+                    params.put("studentId", "1");
+                    String strPath = "/data/data/com.example.releaselearning/files/homework.txt";
+                    params.put("uploadFiles", new File(strPath),"txt");
+                    client.post(this, Constant.URLSubmitHomework,params,new AsyncHttpResponseHandler(){
 
-            hwDetail.setHomeworkFile(createFile(str));
-            System.out.println(hwDetail.toString());
-            try {
-                AsyncHttpClient client = new AsyncHttpClient();
-                RequestParams params = new RequestParams();
-                params.put("homeworkId", "第一个作业");
-                params.put("studentId", "1");
-                String strPath = "/data/data/com.example.releaselearning/files/homework.txt";
-                params.put("uploadFiles", new File(strPath),"txt");
-                client.post(this, Constant.URLSubmitHomework,params,new AsyncHttpResponseHandler(){
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        }
 
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                    }
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
-                    }
-                });
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                        }
+                    });
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
+
+            etDetail.setText("");
         });
 
     }
