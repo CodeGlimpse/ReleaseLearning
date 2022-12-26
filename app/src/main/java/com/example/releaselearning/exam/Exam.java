@@ -1,88 +1,121 @@
 package com.example.releaselearning.exam;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
-
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-
-
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.releaselearning.R;
-import com.example.releaselearning.exam.fragment.Ended;
-import com.example.releaselearning.exam.fragment.InProgress;
-import com.example.releaselearning.exam.fragment.NotStarted;
-;
-import com.example.releaselearning.homeWork.fragment.MyFragmentAdapter;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+public class Exam extends Fragment {
 
-import java.util.ArrayList;
-import java.util.List;
+    private FragmentTransaction transaction;
+    private NoBegin noBeginFragment;
+    private Ongoing ongoingFragment;
+    private End endFragment;
 
+    private RadioGroup rg;
+    private RadioButton rb_no_begin;
+    private RadioButton rb_ongoing;
+    private RadioButton rb_end;
 
-
-public class Exam extends AppCompatActivity {
-    private TabLayout tabLayout;
-    private ViewPager2 vp2;
+    private View v_blue;
+    private View v_white;
+    private View v_white2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View inflate = inflater.inflate(R.layout.activity_exam, container, false);
 
-        getViews();
-        vp2.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
-        tabLayout.setTabMode(TabLayout.MODE_FIXED);
-        List<Fragment> fragments = setData();
-        MyFragmentAdapter adapter = new MyFragmentAdapter(fragments,this);
-        vp2.setAdapter(adapter);
-        TabLayoutMediator mediator = new TabLayoutMediator(
-                tabLayout,
-                vp2,
-                new TabLayoutMediator.TabConfigurationStrategy() {
-                    @Override
-                    public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                        switch (position){
-                            case 0://第一个标签
-                                tab.setText("未开始");
-                                // tab.setIcon(R.mipmap.home);
-                                break;
-                            case 1://第二个标签
-                                tab.setText("进行中");
-                                // tab.setIcon(R.mipmap.cart);
-                                break;
-                            case 2://第二个标签
-                                tab.setText("已结束");
-                                // tab.setIcon(R.mipmap.cart);
-                                break;
+        rg = inflate.findViewById(R.id.rg);
+        rb_no_begin = inflate.findViewById(R.id.rb_no_begin);
+        rb_ongoing = inflate.findViewById(R.id.rb_ongoing);
+        rb_end = inflate.findViewById(R.id.rb_end);
+
+        v_blue = inflate.findViewById(R.id.v_blue);
+        v_white = inflate.findViewById(R.id.v_white);
+        v_white2 = inflate.findViewById(R.id.v_white2);
+
+        transaction = getChildFragmentManager().beginTransaction();
+
+        if (noBeginFragment == null) {
+            noBeginFragment = new NoBegin();
+            transaction.add(R.id.login_frame, noBeginFragment);
+        } else {
+            transaction.show(noBeginFragment);
+        }
+        transaction.commit();
+
+        //RadioGroup选择监听
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.rb_no_begin:
+                        rb_no_begin.setBackground(getResources().getDrawable(R.color.blue_little_little));
+                        rb_ongoing.setBackground(getResources().getDrawable(R.color.white));
+                        rb_end.setBackground(getResources().getDrawable(R.color.white));
+
+                        v_blue.setBackground(getResources().getDrawable(R.color.blue));
+                        v_white.setBackground(getResources().getDrawable(R.color.white));
+                        v_white2.setBackground(getResources().getDrawable(R.color.white));
+
+                        transaction = getChildFragmentManager().beginTransaction();
+                        if (noBeginFragment == null) {
+                            noBeginFragment = new NoBegin();
                         }
-                    }
+                        transaction.replace(R.id.login_frame, noBeginFragment);
+                        transaction.commit();
+                        break;
+
+                    case R.id.rb_ongoing:
+                        rb_no_begin.setBackground(getResources().getDrawable(R.color.white));
+                        rb_ongoing.setBackground(getResources().getDrawable(R.color.blue_little_little));
+                        rb_end.setBackground(getResources().getDrawable(R.color.white));
+
+                        v_blue.setBackground(getResources().getDrawable(R.color.white));
+                        v_white.setBackground(getResources().getDrawable(R.color.blue));
+                        v_white2.setBackground(getResources().getDrawable(R.color.white));
+
+                        transaction = getChildFragmentManager().beginTransaction();
+                        if (ongoingFragment == null) {
+                            ongoingFragment = new Ongoing();
+                        }
+                        transaction.replace(R.id.login_frame, ongoingFragment);
+                        transaction.commit();
+                        break;
+
+                    case R.id.rb_end:
+                        rb_no_begin.setBackground(getResources().getDrawable(R.color.white));
+                        rb_ongoing.setBackground(getResources().getDrawable(R.color.white));
+                        rb_end.setBackground(getResources().getDrawable(R.color.blue_little_little));
+
+                        v_blue.setBackground(getResources().getDrawable(R.color.white));
+                        v_white.setBackground(getResources().getDrawable(R.color.white));
+                        v_white2.setBackground(getResources().getDrawable(R.color.blue));
+
+                        transaction = getChildFragmentManager().beginTransaction();
+                        if (endFragment == null) {
+                            endFragment = new End();
+                        }
+                        transaction.replace(R.id.login_frame, endFragment);
+                        transaction.commit();
+                        break;
+                    default:
+                        break;
                 }
-        );
-        mediator.attach();
-
-
+            }
+        });
+        return inflate;
     }
 
-
-    private List<Fragment> setData() {
-        NotStarted notStarted = new NotStarted();
-        InProgress inProgress = new InProgress();
-        Ended ended = new Ended();
-        List<Fragment> list = new ArrayList<>();
-        list.add(notStarted);
-        list.add(inProgress);
-        list.add(ended);
-        return list;
-    }
-
-    private void getViews() {
-        tabLayout = findViewById(R.id.tablayout_exam);
-        vp2 = findViewById(R.id.vp2_exam);
-    }
 
 }

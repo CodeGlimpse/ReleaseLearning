@@ -1,4 +1,4 @@
-package com.example.releaselearning.exam.fragment;
+package com.example.releaselearning.exam;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,9 +19,10 @@ import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 import com.example.releaselearning.Constant;
 import com.example.releaselearning.Entity.Class;
+import com.example.releaselearning.Entity.Exam;
 import com.example.releaselearning.Entity.Teacher;
 import com.example.releaselearning.R;
-import com.example.releaselearning.Entity.Exam;
+import com.example.releaselearning.exam.adapter.ExamAdapter;
 import com.example.releaselearning.homeWork.HomeWork;
 
 import java.io.IOException;
@@ -34,8 +35,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class InProgress extends Fragment {
-    private List<Exam> list;
+public class Ongoing extends Fragment {
+    private List<com.example.releaselearning.Entity.Exam> list;
     private String stuId;
     @Nullable
     @Override
@@ -74,8 +75,8 @@ public class InProgress extends Fragment {
 
 
 
-    private List<Exam> getData(String stuId) {
-        List<Exam> works = new ArrayList<>();
+    private List<com.example.releaselearning.Entity.Exam> getData(String stuId) {
+        List<com.example.releaselearning.Entity.Exam> works = new ArrayList<>();
         String URL = Constant.URLExam+"/getExamAllByStuId/"+stuId;
         OkHttpClient okHttpClient = new OkHttpClient();
         System.out.println(URL);
@@ -101,23 +102,23 @@ public class InProgress extends Fragment {
 
                     JSONArray jsonArray = JSON.parseArray(responseStr);
                     for (int i = 0; i < jsonArray.size(); i++) {
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            int status = jsonObject.getInteger("status");
-                            if (status == 0) {
-                                String ExamId = jsonObject.getString("ExamId");
-                                String examContent = jsonObject.getString("examContent");
-                                JSONObject clatemp = jsonObject.getJSONObject("classId");
-                                String classId = clatemp.getString("classId");
-                                JSONObject teacherIdtemp = clatemp.getJSONObject("teacherId");
-                                String teacherId = teacherIdtemp.getString("teacherId");
-                                String tname = teacherIdtemp.getString("name");
-                                String tpassword = teacherIdtemp.getString("password");
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        int status = jsonObject.getInteger("status");
+                        if (status == 0) {
+                            String ExamId = jsonObject.getString("ExamId");
+                            String examContent = jsonObject.getString("examContent");
+                            JSONObject clatemp = jsonObject.getJSONObject("classId");
+                            String classId = clatemp.getString("classId");
+                            JSONObject teacherIdtemp = clatemp.getJSONObject("teacherId");
+                            String teacherId = teacherIdtemp.getString("teacherId");
+                            String tname = teacherIdtemp.getString("name");
+                            String tpassword = teacherIdtemp.getString("password");
 
-                                Teacher teacher = new Teacher(teacherId,tname,tpassword);
-                                Class cla = new Class(classId,teacher);
-                                Exam exam = new Exam(ExamId,examContent,cla,status);
-                                works.add(exam);
-                            }
+                            Teacher teacher = new Teacher(teacherId,tname,tpassword);
+                            Class cla = new Class(classId,teacher);
+                            com.example.releaselearning.Entity.Exam exam = new Exam(ExamId,examContent,cla,status);
+                            works.add(exam);
+                        }
 
 
                     }

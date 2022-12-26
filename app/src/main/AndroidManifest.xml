@@ -16,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReleaseLearning"
         android:usesCleartextTraffic="true">
-
         <activity
             android:name="com.example.releaselearning.chat.Chat"
             android:exported="false" />
@@ -24,13 +23,13 @@
             android:name="com.example.releaselearning.exam.Exam"
             android:exported="false" />
         <activity
-            android:name=".homeWork.HomeWork"
+            android:name="com.example.releaselearning.homeWork.HomeWork"
             android:exported="false" />
         <activity
             android:name=".homeWork.SubmitHomework"
             android:exported="false" />
         <activity
-            android:name=".StudentHomepage"
+            android:name="com.example.releaselearning.studentHomepage.StudentHomepage"
             android:exported="false" />
         <activity
             android:name=".Register"
@@ -38,6 +37,7 @@
         <activity
             android:name=".login_in"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

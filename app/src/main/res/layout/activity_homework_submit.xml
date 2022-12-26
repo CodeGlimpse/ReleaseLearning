@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homeWork.SubmitHomework"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/homework_submit_title"
+        android:background="#A6ffffff"
+        android:gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="请在此处作答"
+        android:textSize="35dp"
+        android:textColor="@color/blue"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:layout_margin="15dp"
+        android:background="#A6ffffff">
+
+        <EditText
+            android:id="@+id/homework_submit_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@null"
+            android:enabled="true"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:textSize="20dp"
+            android:minLines="8"
+            android:maxLines="10"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <Button
+            android:gravity="center"
+            android:id="@+id/homweork_submit_button"
+            android:layout_alignParentRight="true"
+            android:elevation="5dp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@color/blue"
+            android:text="提交"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+</LinearLayout>

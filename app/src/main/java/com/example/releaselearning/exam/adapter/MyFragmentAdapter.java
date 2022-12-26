@@ -1,4 +1,4 @@
-package com.example.releaselearning.exam.fragment;
+package com.example.releaselearning.exam.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

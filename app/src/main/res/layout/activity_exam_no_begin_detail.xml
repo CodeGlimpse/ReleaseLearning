@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <!--考试的题目-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="某某科考试"
+        android:textSize="25dp"
+        android:textColor="@color/blue"
+        android:background="@color/white"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:gravity="center"
+        android:text="考生须知"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:textSize="50dp"/>
+
+    <TextView
+        android:layout_margin="10dp"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A6ffffff"
+        android:textSize="20dp"
+        android:textColor="@color/blue"
+        android:text="    注意：要在截止时间提交之类的注意。考生务必做好个人防护，按要求继续保持居家或家校两点一线。考生家长或同住人也应尽量做到两点一线，避免走亲访友，不参加聚集性活动、不聚餐、不进入人员密集的公共场所，避免接触有疫情风险的人员和物品。"
+        />
+    <RadioButton
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="本人已知晓并同意"
+        android:textSize="20dp"
+        android:textColor="@color/blue"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <Button
+            android:background="@color/blue"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="开始答题"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

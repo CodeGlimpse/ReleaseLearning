@@ -1,4 +1,4 @@
-package com.example.releaselearning.exam.fragment;
+package com.example.releaselearning.exam.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

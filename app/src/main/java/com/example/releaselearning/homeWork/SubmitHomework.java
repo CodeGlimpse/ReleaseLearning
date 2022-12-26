@@ -31,7 +31,7 @@ public class SubmitHomework extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submit_homework);
+        setContentView(R.layout.activity_homework_submit);
 
         gitView();
 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <!--如果改场考试已结束，就不会进来此页面，此页面为交卷成功页面-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="某某科考试"
+        android:textSize="25dp"
+        android:textColor="@color/blue"
+        android:background="@color/white"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:gravity="center"
+        android:text="交卷成功！"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:textSize="50dp"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#A6ffffff"
+        android:layout_margin="20dp">
+        <TextView
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="考生学号："
+            android:textColor="@color/blue"/>
+        <TextView
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="考试开始时间："
+            android:textColor="@color/blue"/>
+        <TextView
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="考试结束时间："
+            android:textColor="@color/blue"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
