@@ -9,7 +9,6 @@
     android:padding="0dp"
     android:orientation="vertical"
     android:background="@drawable/background">
-
     <RadioGroup
         android:layout_margin="0dp"
         android:id="@+id/rg"
@@ -50,7 +49,7 @@
     <LinearLayout
         android:layout_margin="0dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
         <View
             android:id="@+id/v_blue"
@@ -69,7 +68,7 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/login_frame"
+        android:id="@+id/homework_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

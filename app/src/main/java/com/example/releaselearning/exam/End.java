@@ -119,13 +119,11 @@ public class End extends Fragment {
                             Exam exam = new Exam(ExamId, examContent, cla, status);
                             works.add(exam);
                         }
-
                     }
 
                 }
             }
         });
-
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {

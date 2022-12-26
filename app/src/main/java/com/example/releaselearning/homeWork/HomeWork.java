@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.releaselearning.Entity.Homework;
 import com.example.releaselearning.R;
 import com.example.releaselearning.Utils.ScreenUtils;
 
@@ -19,8 +20,9 @@ public class HomeWork extends Fragment{
 
     private FragmentTransaction transaction;
     private NoLook noLookFragment;
-    private YesLook yesLookFragment;
 
+    //private YesLook yesLookFragment;
+    private HomeWork yesLookFragment;
     private RadioGroup rg;
     private RadioButton rb_no;
     private RadioButton rb_yes;
@@ -43,7 +45,7 @@ public class HomeWork extends Fragment{
 
         if (noLookFragment == null) {
             noLookFragment = new NoLook();
-            transaction.add(R.id.login_frame, noLookFragment);
+            transaction.add(R.id.homework_vp, noLookFragment);
         } else {
             transaction.show(noLookFragment);
         }
@@ -63,7 +65,7 @@ public class HomeWork extends Fragment{
                         if (noLookFragment == null) {
                             noLookFragment = new NoLook();
                         }
-                        transaction.replace(R.id.login_frame, noLookFragment);
+                        transaction.replace(R.id.homework_vp, noLookFragment);
                         transaction.commit();
                         break;
 
@@ -74,9 +76,9 @@ public class HomeWork extends Fragment{
                         v_white.setBackground(getResources().getDrawable(R.color.blue));
                         transaction = getChildFragmentManager().beginTransaction();
                         if (yesLookFragment == null) {
-                            yesLookFragment = new YesLook();
+                            yesLookFragment = new HomeWork();
                         }
-                        transaction.replace(R.id.login_frame, yesLookFragment);
+                        transaction.replace(R.id.homework_vp, yesLookFragment);
                         transaction.commit();
                         break;
                     default:

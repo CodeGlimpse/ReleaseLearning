@@ -40,13 +40,14 @@ public class YesLook extends Fragment {
 
     private List<Homework> list;
     private String stuId;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //获取布局文件
         View view = inflater.inflate(R.layout.fragment_home_work, null);
         //获取布局文件中的控件对象
-        ListView listView = view.findViewById(R.id.lv_homeWork);
+        ListView listView = view.findViewById(R.id.lv_homework);
         //给控件对象设置必要的属性(给listview设置item)
         stuId = getActivity().getIntent().getStringExtra("id");
         //获取学生作业数据
@@ -69,7 +70,6 @@ public class YesLook extends Fragment {
                 startActivity(intent);
             }
         });
-
         //返回布局文件对象
         return view;
 
