@@ -103,8 +103,8 @@ public class Ongoing extends Fragment {
                     JSONArray jsonArray = JSON.parseArray(responseStr);
                     for (int i = 0; i < jsonArray.size(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        int status = jsonObject.getInteger("status");
-                        if (status == 0) {
+                        String status = jsonObject.getString("status");
+                        if (status.equals("正在考试")) {
                             String ExamId = jsonObject.getString("ExamId");
                             String examContent = jsonObject.getString("examContent");
                             JSONObject clatemp = jsonObject.getJSONObject("classId");

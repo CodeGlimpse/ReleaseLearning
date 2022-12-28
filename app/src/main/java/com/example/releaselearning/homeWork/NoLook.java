@@ -95,7 +95,7 @@ public class NoLook extends Fragment {
 
     private List<Homework> getData(String stuId) {
         List<Homework> works = new ArrayList<>();
-        String URL = Constant.URLHomeWork+"/getHomeWorkAllByStuId/"+stuId;
+        String URL = Constant.URLHomeWork+"/getUndoHomeWorkByStuId/"+stuId;
         OkHttpClient okHttpClient = new OkHttpClient();
         System.out.println(URL);
 

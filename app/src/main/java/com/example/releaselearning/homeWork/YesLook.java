@@ -65,6 +65,7 @@ public class YesLook extends Fragment {
                 Intent intent = getActivity().getIntent();
                 intent.putExtra("homeworkId",homeworkId);
                 intent.putExtra("studentId",stuId);
+                System.out.println(111);
 
                 //跳转到作业详情页面
                 intent.setClass(getActivity(), HomeworkLookDetail.class);
@@ -80,7 +81,7 @@ public class YesLook extends Fragment {
 
     private List<Homework> getData(String stuId) {
         List<Homework> works = new ArrayList<>();
-        String URL = Constant.URLHomeWork+"/getHomeWorkAllByStuId/"+stuId;
+        String URL = Constant.URLHomeWork+"/getDidHomeWorkByStuId/"+stuId;
         OkHttpClient okHttpClient = new OkHttpClient();
         System.out.println(URL);
 

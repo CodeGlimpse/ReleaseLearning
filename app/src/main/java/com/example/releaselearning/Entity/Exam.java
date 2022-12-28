@@ -12,9 +12,9 @@ public class Exam {
     private com.example.releaselearning.Entity.Class classId;
 
 
-    private int status;
+    private String status;
 
-    public Exam(String examId, String examContent, Class classId, int status) {
+    public Exam(String examId, String examContent, Class classId, String status) {
         ExamId = examId;
         this.examContent = examContent;
         this.classId = classId;
@@ -45,11 +45,11 @@ public class Exam {
         this.classId = classId;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

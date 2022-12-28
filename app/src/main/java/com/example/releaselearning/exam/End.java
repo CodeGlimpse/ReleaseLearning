@@ -102,9 +102,9 @@ public class End extends Fragment {
                     JSONArray jsonArray = JSON.parseArray(responseStr);
                     for (int i = 0; i < jsonArray.size(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        int status = jsonObject.getInteger("status");
+                        String status = jsonObject.getString("status");
                         Log.e("ststus",status+"");
-                        if (status == 1) {
+                        if (status.equals("考试结束")) {
                             String ExamId = jsonObject.getString("ExamId");
                             String examContent = jsonObject.getString("examContent");
                             JSONObject clatemp = jsonObject.getJSONObject("classId");

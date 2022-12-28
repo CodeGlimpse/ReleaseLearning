@@ -107,8 +107,8 @@ public class NoBegin extends Fragment {
                     for (int i = 0; i < jsonArray.size(); i++) {
                         try {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            int status = jsonObject.getInteger("status");
-                            if (status == -1) {
+                            String status = jsonObject.getString("status");
+                            if (status.equals("未开始")) {
                                 String ExamId = jsonObject.getString("ExamId");
                                 String examContent = jsonObject.getString("examContent");
                                 JSONObject clatemp = jsonObject.getJSONObject("classId");
