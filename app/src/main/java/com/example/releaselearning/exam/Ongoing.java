@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,35 +40,62 @@ import okhttp3.Response;
 public class Ongoing extends Fragment {
     private List<com.example.releaselearning.Entity.Exam> list;
     private String stuId;
+    private Button button;
+    private WebView webView;
+    private TextView textView;
+    private int state = Constant.BEGIN_EXAM;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //获取布局文件
-        View view = inflater.inflate(R.layout.fragment_exam, null);
+        View view = inflater.inflate(R.layout.activity_exam_ongoing_detail, null);
         //获取布局文件中的控件对象
         ListView listView = view.findViewById(R.id.lv_exam);
         //给控件对象设置必要的属性(给listview设置item)
         stuId = getActivity().getIntent().getStringExtra("id");
-        //获取学生考试数据
-        list = getData(stuId);
-        ExamAdapter adapter = new ExamAdapter(getContext(),R.layout.fragment_exam_item,list);
-        listView.setAdapter(adapter);
+        button = view.findViewById(R.id.exam_ongong_detail_button);
+        webView = view.findViewById(R.id.exam_ongong_detail_wv);
+        textView = view.findViewById(R.id.exam_ongong_detail_tv);
+        textView.setText("准备好后点击开始考试");
+        button.setOnClickListener(view1 -> {
 
-        // tvMsg.setText("设置页面");
-        //给某些控件对象添加事件监听器
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView tv = view.findViewById(R.id.tv_examId);
-                String examId = tv.getText().toString();
-                Intent intent = getActivity().getIntent();
-                intent.putExtra("examId",examId);
+            if(state == Constant.BEGIN_EXAM){
+//                Constant.URLEXAM ;//监考网页
+                textView.setText("作答完毕后点击结束考试");
+                button.setText("结束考试");
+                webView.loadUrl(Constant.URLEXAM );
+                state = Constant.END_EXAM;
 
-                //跳转到考试详情页面
-                intent.setClass(getActivity(), HomeWork.class);
-                startActivity(intent);
+            }else{
+                textView.setText("准备好后点击开始考试");
+                button.setText("开始考试");
+                webView.loadUrl("");
+                state = Constant.BEGIN_EXAM;
             }
+
         });
+
+
+//        //获取学生考试数据
+//        list = getData(stuId);
+//        ExamAdapter adapter = new ExamAdapter(getContext(),R.layout.fragment_exam_item,list);
+//        listView.setAdapter(adapter);
+//
+//        // tvMsg.setText("设置页面");
+//        //给某些控件对象添加事件监听器
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                TextView tv = view.findViewById(R.id.tv_examId);
+//                String examId = tv.getText().toString();
+//                Intent intent = getActivity().getIntent();
+//                intent.putExtra("examId",examId);
+//
+//                //跳转到考试详情页面
+//                intent.setClass(getActivity(), HomeWork.class);
+//                startActivity(intent);
+//            }
+//        });
 
         //返回布局文件对象
         return view;

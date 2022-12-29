@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".exam.ExamLookDetail"
+    android:orientation="vertical">
+
+    <!--这里应该标注的是作业的标题-->
+    <TextView
+        android:id="@+id/exam_look_detail_title"
+        android:background="#A6ffffff"
+        android:gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="考试id"
+        android:textSize="35dp"
+        android:textColor="@color/blue"
+        android:layout_margin="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#A6ffffff"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--作业的分值-->
+            <TextView
+                android:id="@+id/exam_look_detail_score"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="考试得分：90"
+                android:textColor="@color/blue"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:layout_margin="25dp"
+        android:background="#A6ffffff">
+
+        <!--作业的详细内容-->
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/exam_wv"
+            xmlns:android="http://schemas.android.com/apk/res/android" />
+    </LinearLayout>
+
+</LinearLayout>

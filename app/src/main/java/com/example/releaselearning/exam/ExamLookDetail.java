@@ -1,6 +1,4 @@
-package com.example.releaselearning.homeWork;
-
-import static com.example.releaselearning.R.id.homework_look_detail_score;
+package com.example.releaselearning.exam;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +16,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.releaselearning.Constant;
 import com.example.releaselearning.R;
 
-
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -27,9 +24,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class HomeworkLookDetail extends AppCompatActivity {
+public class ExamLookDetail extends AppCompatActivity {
     private int sorce=0;
-    private String homeworkFile = "";
+    private String examFile = "";
     private TextView tvTitle ,tvScore;
 
     //通信
@@ -40,32 +37,32 @@ public class HomeworkLookDetail extends AppCompatActivity {
             switch (msg.what) {
                 case 1:
                     tvScore.setText("考试得分："+sorce);
-                    WebView wv = findViewById(R.id.wv);
-                    wv.loadUrl(homeworkFile);
+                    WebView wv = findViewById(R.id.exam_wv);
+                    wv.loadUrl(examFile);
                     break;
             }
         }
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homework_look_detail);
+        setContentView(R.layout.activity_exam_look_detail);
+        System.out.println(getIntent().getStringExtra("studentId"));
+        System.out.println(getIntent().getStringExtra("examId"));
         getView();
         String StudentId= getIntent().getStringExtra("studentId");
-        String HomeworkId= getIntent().getStringExtra("homeworkId");
-        tvTitle.setText(HomeworkId);
+        String ExamId= getIntent().getStringExtra("examId");
+        tvTitle.setText(ExamId);
 
-        String stringURL = Constant.URLHomeworkFindByStudentIDAndHomeworkId + "/" + StudentId + "/"+HomeworkId;
+        String stringURL = Constant.URLExamFindByStudentIDAndExamId+ "/" + StudentId + "/"+ExamId;
+        System.out.println(stringURL);
         new Thread(() -> getMes(stringURL)).start();
-    }
 
+    }
     private void getView() {
-        tvTitle = findViewById(R.id.homework_look_detail_title);
-        tvScore = findViewById(R.id.homework_look_detail_score);
+        tvTitle = findViewById(R.id.exam_look_detail_title);
+        tvScore = findViewById(R.id.exam_look_detail_score);
     }
-
-
     private void getMes(String URL) {
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
@@ -87,8 +84,8 @@ public class HomeworkLookDetail extends AppCompatActivity {
                 String responseStr = response.body().string();
                 System.out.println(responseStr);
                 JSONObject jsonObj = JSON.parseObject(responseStr);
-                homeworkFile = jsonObj.get("homeworkFile").toString();
-                sorce = (int) jsonObj.get("homeworkScore");
+                examFile = jsonObj.get("examFile").toString();
+                sorce = (int) jsonObj.get("examScore");
                 Message message = new Message();
                 message.what = 1;
 

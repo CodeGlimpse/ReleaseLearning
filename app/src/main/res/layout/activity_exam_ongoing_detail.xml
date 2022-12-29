@@ -4,9 +4,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical">
-
-    <!--考试的题目,突然想到我们的考试应该是以文件形式发放，该布局文件可作废-->
     <TextView
+        android:id="@+id/exam_ongong_detail_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -15,12 +14,15 @@
         android:textSize="25dp"
         android:textColor="@color/blue"
         android:background="@color/white"/>
-    <LinearLayout
-        android:gravity="center"
+    <WebView
+        android:id="@+id/exam_ongong_detail_wv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </LinearLayout>
+        android:layout_height="0dp"/>
+    <Button
+        android:id="@+id/exam_ongong_detail_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始考试"/>
 
 
 

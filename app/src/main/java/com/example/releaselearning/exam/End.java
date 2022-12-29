@@ -25,6 +25,7 @@ import com.example.releaselearning.R;
 import com.example.releaselearning.Entity.Exam;
 import com.example.releaselearning.exam.adapter.ExamAdapter;
 import com.example.releaselearning.homeWork.HomeWork;
+import com.example.releaselearning.homeWork.HomeworkLookDetail;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,6 +49,8 @@ public class End extends Fragment {
         View view = inflater.inflate(R.layout.fragment_exam, null);
         //获取布局文件中的控件对象
         ListView listView = view.findViewById(R.id.lv_exam);
+        TextView textView = view.findViewById(R.id.tv_exam);
+        textView.setText("");
         //给控件对象设置必要的属性(给listview设置item)
         stuId = getActivity().getIntent().getStringExtra("id");
         //获取学生考试数据
@@ -63,12 +66,13 @@ public class End extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView tv = view.findViewById(R.id.tv_examId);
                 String examId = tv.getText().toString();
-                Intent intent = getActivity().getIntent();
+                Intent intent = new Intent();
                 intent.putExtra("examId",examId);
-
-                //跳转到考试详情页面
-                intent.setClass(getActivity(), HomeWork.class);
+                intent.putExtra("studentId" , stuId);
+                System.out.println(examId + "  "+ stuId);
+                intent.setClass(getActivity(), ExamLookDetail.class);
                 startActivity(intent);
+
             }
         });
         //返回布局文件对象
